@@ -1,0 +1,1 @@
+prop.test(x=c(3, 2), n=c(7,8), alternative='two.sided')
