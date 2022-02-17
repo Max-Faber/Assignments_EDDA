@@ -1,3 +1,4 @@
+setwd("S:/Shared/Documents/Study/VU/MSc Year 1/Experimental Design and Data Analysis/Assignments/Assignment 1")
 dataset = read.table('./Datasets/clouds.txt', header = TRUE)
 par(mfrow=c(2,2))
 seeded = dataset$seeded
