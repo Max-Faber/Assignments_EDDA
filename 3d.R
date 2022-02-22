@@ -7,7 +7,7 @@ dogsframe[1:15,]
 is.factor(dogsframe$variety)
 is.numeric(dogsframe$variety)
 
-# Check for independancy
+# Check for independence
 dogs_lm = lm(yield~variety, data=dogsframe)
 plot(fitted(dogs_lm), resid(dogs_lm))
 abline(0, 0)
