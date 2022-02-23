@@ -1,4 +1,4 @@
-setwd("/Volumes/SEAGATE/code/Assignments_EDDA")
+setwd("S:/Shared/Documents/Study/VU/MSc Year 1/Experimental Design and Data Analysis/Assignments/Assignment 1")
 
 # Extra check for normality
 shapiro.test(dogs$isofluorane)
