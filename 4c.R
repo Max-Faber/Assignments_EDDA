@@ -15,3 +15,9 @@ for (x in 1:length(dataset$hemoglobin)){
 data
 library(Rmisc)
 CI(data, ci=0.95)
+
+# Which combination of rate and method yield the highest hemoglobin?
+cnt = xtabs(~rate+method, dataset) # Gives a cross-table of the occurrences of all combinations between rate and method
+sum = xtabs(hemoglobin~rate+method, dataset) # Gives a cross-table of the sum of all hemoglobin values with the corresponding values for rate and method
+avg = sum/cnt
+max(sum/cnt) # -> rate = 2, method = 'A'
