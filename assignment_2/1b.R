@@ -23,11 +23,17 @@ df = data.frame(col_nausea, col_med=as.factor(col_med))
 df
 chisq.test(df$col_nausea, df$col_med)
 
-mystat = function(x) chisq.test(x)$statistic
-B = 1000
+mystat = function(x, y) {
+  return(chisq.test(x, y)$statistic)
+}
+B = 10000
 tstar = numeric(B)
 for (i in 1:B) {
   med_star = sample(df$col_med)
-  tstar[i] = mystat(lm(df$col_nausea~med_star))
+  tstar[i] = mystat(df$col_nausea, med_star)
 }
-myt=mystat(lm(df$col_nausea~df$col_med))
+myt=mystat(df$col_nausea, df$col_med)
+hist(tstar)
+pl = sum(tstar<myt)/B
+pr = sum(tstar>myt)/B
+min(pl, pr)
